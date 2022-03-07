@@ -30,7 +30,7 @@ const consultar = async () => {
         paragraphDelete.textContent = 'X';
         paragraphDelete.className = `${inputText}`
         paragraphDelete.addEventListener('click', () => deleteParagraph(namePercentil));
-        namePercentil.textContent = inputText + ' tiene un ' + element.probability + '% de ser ' + element.country_id
+        namePercentil.textContent = inputText + ' tiene un ' + element.probability + '% de ser ' + element.country_id;
         document.body.appendChild(namePercentil)
         namePercentil.appendChild(paragraphDelete)
     });
