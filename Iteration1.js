@@ -20,14 +20,14 @@ pasando como parametro de la api, el valor del input. */
 const baseUrl = 'https://api.nationalize.io';
 
 const consultar = async () => {
-    inputText = document.querySelector('input').value;
+    const inputText = document.querySelector('input').value;
     const result = await fetch(baseUrl + '/?name=' + inputText);
     const resultToJson = await result.json();
     let {country} = resultToJson;
     country.forEach(element => {
         const namePercentil = document.createElement('p');
         const paragraphDelete = document.createElement('button')
-        paragraphDelete.textContent = 'X';
+        paragraphDelete.textContent = 'Borrar este parrafo';
         paragraphDelete.className = `${inputText}`
         paragraphDelete.addEventListener('click', () => deleteParagraph(namePercentil));
         namePercentil.textContent = inputText + ' tiene un ' + element.probability + '% de ser ' + element.country_id;
